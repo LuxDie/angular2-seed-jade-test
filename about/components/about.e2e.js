@@ -1,0 +1,18 @@
+describe('About', function () {
+    beforeEach(function () {
+        browser.get('/dist/dev/#/about');
+    });
+    it('should have an input', function () {
+        expect(element(by.css('app section about form input')).isPresent()).toEqual(true);
+    });
+    it('should have a list of computer scientists', function () {
+        expect(element(by.css('app section about md-list')).getText()).toEqual('Dijkstra\nKnuth\nTuring\nHopper');
+    });
+    it('should add a name to the list using the form', function () {
+        element(by.css('app section about form input')).sendKeys('Tim Berners-Lee');
+        element(by.css('app section about form button')).click();
+        expect(element(by.css('app section about md-list')).getText()).toEqual('Dijkstra\nKnuth\nTuring\nHopper\nTim Berners-Lee');
+    });
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFib3V0L2NvbXBvbmVudHMvYWJvdXQuZTJlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLFFBQVEsQ0FBQyxPQUFPLEVBQUU7SUFFaEIsVUFBVSxDQUFDO1FBQ1QsT0FBTyxDQUFDLEdBQUcsQ0FBQyxtQkFBbUIsQ0FBQyxDQUFDO0lBQ25DLENBQUMsQ0FBQyxDQUFDO0lBRUgsRUFBRSxDQUFDLHNCQUFzQixFQUFFO1FBQ3pCLE1BQU0sQ0FBQyxPQUFPLENBQUMsRUFBRSxDQUFDLEdBQUcsQ0FBQyw4QkFBOEIsQ0FBQyxDQUFDLENBQUMsU0FBUyxFQUFFLENBQUMsQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLENBQUM7SUFDcEYsQ0FBQyxDQUFDLENBQUM7SUFFSCxFQUFFLENBQUMsMkNBQTJDLEVBQUU7UUFDOUMsTUFBTSxDQUFDLE9BQU8sQ0FBQyxFQUFFLENBQUMsR0FBRyxDQUFDLDJCQUEyQixDQUFDLENBQUMsQ0FBQyxPQUFPLEVBQUUsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxpQ0FBaUMsQ0FBQyxDQUFDO0lBQzVHLENBQUMsQ0FBQyxDQUFDO0lBRUgsRUFBRSxDQUFDLDhDQUE4QyxFQUFFO1FBQ2pELE9BQU8sQ0FBQyxFQUFFLENBQUMsR0FBRyxDQUFDLDhCQUE4QixDQUFDLENBQUMsQ0FBQyxRQUFRLENBQUMsaUJBQWlCLENBQUMsQ0FBQztRQUM1RSxPQUFPLENBQUMsRUFBRSxDQUFDLEdBQUcsQ0FBQywrQkFBK0IsQ0FBQyxDQUFDLENBQUMsS0FBSyxFQUFFLENBQUM7UUFDekQsTUFBTSxDQUFDLE9BQU8sQ0FBQyxFQUFFLENBQUMsR0FBRyxDQUFDLDJCQUEyQixDQUFDLENBQUMsQ0FBQyxPQUFPLEVBQUUsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxrREFBa0QsQ0FBQyxDQUFDO0lBQzdILENBQUMsQ0FBQyxDQUFDO0FBQ0wsQ0FBQyxDQUFDLENBQUMiLCJmaWxlIjoiYWJvdXQvY29tcG9uZW50cy9hYm91dC5lMmUuanMiLCJzb3VyY2VzQ29udGVudCI6WyJkZXNjcmliZSgnQWJvdXQnLCBmdW5jdGlvbigpIHtcclxuXHJcbiAgYmVmb3JlRWFjaChmdW5jdGlvbigpIHtcclxuICAgIGJyb3dzZXIuZ2V0KCcvZGlzdC9kZXYvIy9hYm91dCcpO1xyXG4gIH0pO1xyXG5cclxuICBpdCgnc2hvdWxkIGhhdmUgYW4gaW5wdXQnLCBmdW5jdGlvbigpIHtcclxuICAgIGV4cGVjdChlbGVtZW50KGJ5LmNzcygnYXBwIHNlY3Rpb24gYWJvdXQgZm9ybSBpbnB1dCcpKS5pc1ByZXNlbnQoKSkudG9FcXVhbCh0cnVlKTtcclxuICB9KTtcclxuXHJcbiAgaXQoJ3Nob3VsZCBoYXZlIGEgbGlzdCBvZiBjb21wdXRlciBzY2llbnRpc3RzJywgZnVuY3Rpb24oKSB7XHJcbiAgICBleHBlY3QoZWxlbWVudChieS5jc3MoJ2FwcCBzZWN0aW9uIGFib3V0IG1kLWxpc3QnKSkuZ2V0VGV4dCgpKS50b0VxdWFsKCdEaWprc3RyYVxcbktudXRoXFxuVHVyaW5nXFxuSG9wcGVyJyk7XHJcbiAgfSk7XHJcblxyXG4gIGl0KCdzaG91bGQgYWRkIGEgbmFtZSB0byB0aGUgbGlzdCB1c2luZyB0aGUgZm9ybScsIGZ1bmN0aW9uKCkge1xyXG4gICAgZWxlbWVudChieS5jc3MoJ2FwcCBzZWN0aW9uIGFib3V0IGZvcm0gaW5wdXQnKSkuc2VuZEtleXMoJ1RpbSBCZXJuZXJzLUxlZScpO1xyXG4gICAgZWxlbWVudChieS5jc3MoJ2FwcCBzZWN0aW9uIGFib3V0IGZvcm0gYnV0dG9uJykpLmNsaWNrKCk7XHJcbiAgICBleHBlY3QoZWxlbWVudChieS5jc3MoJ2FwcCBzZWN0aW9uIGFib3V0IG1kLWxpc3QnKSkuZ2V0VGV4dCgpKS50b0VxdWFsKCdEaWprc3RyYVxcbktudXRoXFxuVHVyaW5nXFxuSG9wcGVyXFxuVGltIEJlcm5lcnMtTGVlJyk7XHJcbiAgfSk7XHJcbn0pO1xyXG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=
